@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manufacturing — ROVAR Premium Hotel Amenities Production Facility</title>
+    <meta name="description" content="Explore ROVAR's state-of-the-art manufacturing facility in Ahmedabad. GMP-certified production, in-house R&D, advanced formulation labs, and strict quality control for premium hotel amenities since 2006." />
+    <link rel="canonical" href="manufacturing.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Manufacturing — ROVAR Hospitality Amenities" />
+    <meta property="og:description" content="Inside ROVAR's production facility: GMP-certified manufacturing, in-house R&D, and rigorous quality control for luxury hotel amenities." />
+    <meta property="og:image" content="images/about2.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .mfg-hero-stats { display: flex; gap: 48px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border-soft); flex-wrap: wrap; }
+      .mfg-stat-item { display: flex; flex-direction: column; gap: 4px; }
+      .mfg-stat-number { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--primary); line-height: 1; }
+      .mfg-stat-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-body); }
+      .mfg-process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; }
+      .mfg-process-cell { background: var(--bg-secondary); padding: 40px 32px; position: relative; transition: var(--transition); border-right: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+      .mfg-process-cell:hover { background: var(--secondary-light); z-index: 2; }
+      .mfg-process-cell:nth-child(3n) { border-right: none; }
+      .mfg-step-number { font-family: var(--font-serif); font-size: 48px; font-weight: 700; color: rgba(128, 116, 189, 0.12); line-height: 1; margin-bottom: 16px; transition: var(--transition-fast); }
+      .mfg-process-cell:hover .mfg-step-number { color: rgba(128, 116, 189, 0.28); }
+      .mfg-step-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+      .mfg-step-title { font-family: var(--font-sans); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-dark); margin-bottom: 10px; }
+      .mfg-step-desc { font-size: 14px; line-height: 1.65; color: var(--text-body); }
+      .mfg-facilities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 56px; }
+      .mfg-facilities-img { border-radius: var(--radius-lg); overflow: hidden; position: relative; }
+      .mfg-facilities-img img { width: 100%; height: 480px; object-fit: cover; display: block; }
+      .mfg-img-badge { position: absolute; bottom: 24px; left: 24px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-radius: var(--radius-md); padding: 16px 20px; box-shadow: var(--shadow-md); }
+      .mfg-img-badge-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--primary); margin-bottom: 4px; }
+      .mfg-img-badge-value { font-size: 18px; font-weight: 700; color: var(--text-dark); }
+      .mfg-feature-list { list-style: none; display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+      .mfg-feature-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: var(--radius-md); transition: var(--transition); }
+      .mfg-feature-item:hover { border-color: rgba(128, 116, 189, 0.3); transform: translateX(6px); box-shadow: var(--shadow-sm); }
+      .mfg-feature-icon { width: 40px; height: 40px; background: var(--secondary-light); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+      .mfg-feature-text h4 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dark); margin-bottom: 4px; }
+      .mfg-feature-text p { font-size: 13px; color: var(--text-body); line-height: 1.5; }
+      .mfg-cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+      .mfg-cert-card { text-align: center; padding: 32px 24px; background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); transition: var(--transition); }
+      .mfg-cert-card:hover { border-color: rgba(128, 116, 189, 0.35); transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+      .mfg-cert-icon { font-size: 40px; display: block; margin-bottom: 16px; }
+      .mfg-cert-title { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+      .mfg-cert-desc { font-size: 13px; color: var(--text-body); line-height: 1.5; }
+      .mfg-capacity-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+      .mfg-capacity-card { padding: 40px 32px; border-radius: var(--radius-lg); background: var(--secondary-light); border: 1px solid rgba(128, 116, 189, 0.15); position: relative; overflow: hidden; transition: var(--transition); }
+      .mfg-capacity-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(128, 116, 189, 0.3); }
+      .mfg-capacity-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--primary); }
+      .mfg-capacity-value { font-family: var(--font-serif); font-size: clamp(36px, 5vw, 52px); font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+      .mfg-capacity-unit { font-size: 14px; font-weight: 600; color: var(--text-body); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+      .mfg-capacity-desc { font-size: 14px; color: var(--text-body); line-height: 1.6; }
+      .mfg-cta-banner { background: linear-gradient(135deg, #1E1E1C 0%, #2d2a3e 100%); border-radius: var(--radius-lg); padding: 72px 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; overflow: hidden; }
+      .mfg-cta-banner::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(128, 116, 189, 0.15) 0%, transparent 70%); pointer-events: none; }
+      .mfg-cta-text h2 { font-size: clamp(28px, 4vw, 40px); color: #FFFFFF; line-height: 1.15; margin-bottom: 12px; }
+      .mfg-cta-text p { color: rgba(250, 249, 246, 0.75); font-size: 16px; line-height: 1.6; max-width: 480px; }
+      .mfg-cta-actions { display: flex; gap: 16px; flex-shrink: 0; flex-wrap: wrap; }
+      @media (max-width: 1024px) {
+        .mfg-process-grid { grid-template-columns: repeat(2, 1fr); }
+        .mfg-cert-grid { grid-template-columns: repeat(2, 1fr); }
+        .mfg-capacity-row { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 768px) {
+        .mfg-process-grid { grid-template-columns: 1fr; }
+        .mfg-facilities-grid { grid-template-columns: 1fr; gap: 32px; }
+        .mfg-facilities-img img { height: 300px; }
+        .mfg-cert-grid { grid-template-columns: repeat(2, 1fr); }
+        .mfg-capacity-row { grid-template-columns: 1fr; gap: 24px; }
+        .mfg-cta-banner { flex-direction: column; padding: 48px 32px; }
+        .mfg-cta-actions { width: 100%; }
+        .mfg-hero-stats { gap: 28px; }
+      }
+      @media (max-width: 480px) { .mfg-cert-grid { grid-template-columns: 1fr; } }
+
+      /* Hero image background */
+      .mfg-hero-bg {
+        position: relative;
+        padding-top: 160px;
+        padding-bottom: 80px;
+        background-image: url('images/manufacturing-facility.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+      .mfg-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(20,18,30,0.78) 0%, rgba(30,30,28,0.62) 100%);
+        z-index: 2;
+      }
+      .mfg-hero-bg .container {
+        position: relative;
+        z-index: 5;
+      }
+      @media (max-width: 768px) {
+        .mfg-hero-bg {
+          background-attachment: scroll;
+          padding-top: 130px;
+          padding-bottom: 56px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
+
+    <header class="header-wrapper">
+      <div class="global-header">
+        <a href="index.html" class="logo" aria-label="ROVAR Homepage"><img src="images/logo2.png" alt="ROVAR Logo" /></a>
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li class="has-dropdown" aria-haspopup="true">
+              <a href="products.html" class="nav-link">Products <span class="dropdown-indicator">&#9660;</span></a>
+              <div class="dropdown-menu" role="menu">
+                <a href="products.html" class="dropdown-item"><span class="dropdown-item-title">All Products <span class="dropdown-arrow">&#8594;</span></span><span class="dropdown-item-desc">Browse our entire hospitality catalog</span></a>
+                <a href="hotel-soaps.html" class="dropdown-item"><span class="dropdown-item-title">Hotel Soaps <span class="dropdown-arrow">&#8594;</span></span><span class="dropdown-item-desc">Classic and glycerine guest cleansing bars</span></a>
+                <a href="bath-body-care.html" class="dropdown-item"><span class="dropdown-item-title">Bath &amp; Body Care <span class="dropdown-arrow">&#8594;</span></span><span class="dropdown-item-desc">Premium shampoos, conditioners, and body washes</span></a>
+                <a href="guest-room-essentials.html" class="dropdown-item"><span class="dropdown-item-title">Guest Room Essentials <span class="dropdown-arrow">&#8594;</span></span><span class="dropdown-item-desc">Accessory kits and personal care room essentials</span></a>
+                <a href="hotel-slippers.html" class="dropdown-item"><span class="dropdown-item-title">Hotel Slippers <span class="dropdown-arrow">&#8594;</span></span><span class="dropdown-item-desc">Terry, fleece, and waffle comfort slippers</span></a>
+              </div>
+            </li>
+            <li><a href="custom-branding.html" class="nav-link">Custom Branding</a></li>
+            <li><a href="manufacturing.html" class="nav-link active">Manufacturing</a></li>
+            <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="mobile-nav-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <ul class="mobile-menu">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li>
+          <button class="mobile-nav-link mobile-submenu-toggle">Products <span class="arrow-icon">&#9660;</span></button>
+          <ul class="mobile-submenu">
+            <li><a href="products.html" class="mobile-submenu-link">All Products</a></li>
+            <li><a href="hotel-soaps.html" class="mobile-submenu-link">Hotel Soaps</a></li>
+            <li><a href="bath-body-care.html" class="mobile-submenu-link">Bath &amp; Body Care</a></li>
+            <li><a href="guest-room-essentials.html" class="mobile-submenu-link">Guest Essentials</a></li>
+            <li><a href="hotel-slippers.html" class="mobile-submenu-link">Hotel Slippers</a></li>
+          </ul>
+        </li>
+        <li><a href="custom-branding.html" class="mobile-nav-link">Custom Branding</a></li>
+        <li><a href="manufacturing.html" class="mobile-nav-link active">Manufacturing</a></li>
+        <li><a href="sustainability.html" class="mobile-nav-link">Sustainability</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Request a Quote</a>
+        <a href="https://wa.me/919106882700?text=Hello%20ROVAR,%20I%20am%20interested%20in%20your%20manufacturing%20capabilities." class="btn btn-whatsapp" style="width: 100%; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor" style="margin-right: 8px; vertical-align: middle; display: inline-block;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>Chat on WhatsApp
+        </a>
+      </div>
+    </aside>
+
+    <!-- HERO -->
+    <section class="mfg-hero-bg" aria-label="Manufacturing Hero">
+      <div class="mfg-hero-overlay"></div>
+      <div class="container" style="position: relative; z-index: 5;">
+        <div class="breadcrumbs" style="color: rgba(255,255,255,0.65);"><a href="index.html" style="color: rgba(255,255,255,0.65);">Home</a> / <span>Manufacturing</span></div>
+        <div class="hero-editorial-layout reveal-up" style="margin-top: 24px;">
+          <div class="hero-editorial-left">
+            <span class="label-small" style="color: var(--secondary);">Our Facility</span>
+            <h1 style="max-width: 600px; color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.3);">Precision Manufacturing. Uncompromising Quality.</h1>
+          </div>
+          <div class="hero-editorial-right">
+            <p style="color: rgba(250,249,246,0.88); font-size: 17px; line-height: 1.75;">From raw formulation to finished product, every ROVAR amenity is crafted in our GMP-compliant Ahmedabad facility using internationally sourced ingredients and rigorous quality controls.</p>
+          </div>
+        </div>
+        <div class="mfg-hero-stats reveal-up" style="border-top-color: rgba(255,255,255,0.18);">
+          <div class="mfg-stat-item"><span class="mfg-stat-number" style="color: #ffffff;">20+</span><span class="mfg-stat-label" style="color: rgba(255,255,255,0.7);">Years of Production</span></div>
+          <div class="mfg-stat-item"><span class="mfg-stat-number" style="color: #ffffff;">50K+</span><span class="mfg-stat-label" style="color: rgba(255,255,255,0.7);">Units / Day</span></div>
+          <div class="mfg-stat-item"><span class="mfg-stat-number" style="color: #ffffff;">GMP</span><span class="mfg-stat-label" style="color: rgba(255,255,255,0.7);">Certified Facility</span></div>
+          <div class="mfg-stat-item"><span class="mfg-stat-number" style="color: #ffffff;">100%</span><span class="mfg-stat-label" style="color: rgba(255,255,255,0.7);">In-House QC</span></div>
+          <div class="mfg-stat-item"><span class="mfg-stat-number" style="color: #ffffff;">12+</span><span class="mfg-stat-label" style="color: rgba(255,255,255,0.7);">Product Categories</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANUFACTURING PROCESS -->
+    <section class="section section-white" aria-label="Manufacturing Process">
+      <div class="container">
+        <div class="sec-header centered reveal-up">
+          <span class="label-small">How We Build It</span>
+          <h2 class="sec-title">From Concept to Guest Room</h2>
+          <p class="sec-desc">Our end-to-end manufacturing process ensures every product that leaves our facility meets the highest standards of quality, safety, and consistency.</p>
+        </div>
+        <div class="mfg-process-grid">
+          <div class="mfg-process-cell reveal-up">
+            <div class="mfg-step-number">01</div>
+            <span class="mfg-step-icon">&#129514;</span>
+            <h3 class="mfg-step-title">R&amp;D &amp; Formulation</h3>
+            <p class="mfg-step-desc">Our in-house chemists develop and test formulations for every new product, balancing sensory experience, skin safety, stability, and cost-efficiency for B2B hospitality needs.</p>
+          </div>
+          <div class="mfg-process-cell reveal-up">
+            <div class="mfg-step-number">02</div>
+            <span class="mfg-step-icon">&#128230;</span>
+            <h3 class="mfg-step-title">Ingredient Sourcing</h3>
+            <p class="mfg-step-desc">We procure premium active ingredients from verified, internationally-compliant suppliers. All raw materials undergo COA verification and incoming quality inspection before production begins.</p>
+          </div>
+          <div class="mfg-process-cell reveal-up">
+            <div class="mfg-step-number">03</div>
+            <span class="mfg-step-icon">&#9879;&#65039;</span>
+            <h3 class="mfg-step-title">Batch Manufacturing</h3>
+            <p class="mfg-step-desc">Controlled batch production follows GMP-compliant procedures in our clean manufacturing halls, with automated mixing, filling, and sealing lines for consistent output at scale.</p>
+          </div>
+          <div class="mfg-process-cell reveal-up">
+            <div class="mfg-step-number">04</div>
+            <span class="mfg-step-icon">&#128269;</span>
+            <h3 class="mfg-step-title">Quality Control</h3>
+            <p class="mfg-step-desc">Every batch is subjected to in-process QC checks including pH, viscosity, microbial load, and stability tests. Only fully compliant batches proceed to packaging and dispatch.</p>
+          </div>
+          <div class="mfg-process-cell reveal-up">
+            <div class="mfg-step-number">05</div>
+            <span class="mfg-step-icon">&#127912;</span>
+            <h3 class="mfg-step-title">Custom Packaging</h3>
+            <p class="mfg-step-desc">From bespoke label design to branded carton printing, our in-house packaging team handles all customization — supporting custom shapes, label artwork, and hotel-specific branding elements.</p>
+          </div>
+          <div class="mfg-process-cell reveal-up">
+            <div class="mfg-step-number">06</div>
+            <span class="mfg-step-icon">&#128666;</span>
+            <h3 class="mfg-step-title">Packing &amp; Dispatch</h3>
+            <p class="mfg-step-desc">Finished goods are packed to hospitality-grade transport standards, with barcoding, lot traceability, and timely dispatch to hotel properties and distribution partners across India.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACILITY HIGHLIGHTS -->
+    <section class="section" aria-label="Facility Highlights">
+      <div class="container">
+        <div class="mfg-facilities-grid">
+          <div class="mfg-facilities-img reveal-up">
+            <img src="images/manufacturing-facility.jpg" alt="ROVAR production facility interior" />
+            <div class="mfg-img-badge">
+              <div class="mfg-img-badge-label">Production Facility</div>
+              <div class="mfg-img-badge-value">Ahmedabad, India</div>
+            </div>
+          </div>
+          <div class="reveal-up">
+            <span class="label-small">Inside Our Plant</span>
+            <h2 class="sec-title" style="margin-top: 4px; margin-bottom: 20px;">A Facility Built for Precision</h2>
+            <p style="font-size: 16px; color: var(--text-body); line-height: 1.7; margin-bottom: 8px;">Our 20,000+ sq. ft. facility in Ahmedabad is designed around clean manufacturing, energy efficiency, and scalable B2B production. Every operational zone is purpose-built for the hotel amenities category.</p>
+            <ul class="mfg-feature-list">
+              <li class="mfg-feature-item">
+                <div class="mfg-feature-icon">&#127981;</div>
+                <div class="mfg-feature-text"><h4>GMP-Compliant Production Halls</h4><p>Segregated wet &amp; dry zones with positive pressure airflow, temperature monitoring, and scheduled sanitation protocols.</p></div>
+              </li>
+              <li class="mfg-feature-item">
+                <div class="mfg-feature-icon">&#128300;</div>
+                <div class="mfg-feature-text"><h4>In-House R&amp;D Laboratory</h4><p>Equipped with microbiology, stability, and sensory testing capabilities — enabling rapid formulation and claim validation.</p></div>
+              </li>
+              <li class="mfg-feature-item">
+                <div class="mfg-feature-icon">&#9889;</div>
+                <div class="mfg-feature-text"><h4>Automated Filling Lines</h4><p>High-speed liquid and cream filling lines with volumetric accuracy and zero-cross-contamination design.</p></div>
+              </li>
+              <li class="mfg-feature-item">
+                <div class="mfg-feature-icon">&#128203;</div>
+                <div class="mfg-feature-text"><h4>Full Batch Traceability</h4><p>Every batch is tracked from raw material intake through final dispatch using our lot-based documentation system.</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTION CAPACITY -->
+    <section class="section section-white" aria-label="Production Capacity">
+      <div class="container">
+        <div class="sec-header reveal-up">
+          <span class="label-small">Scale &amp; Capacity</span>
+          <h2 class="sec-title">Production Numbers That Deliver</h2>
+          <p class="sec-desc">Our facility is sized for serious B2B hospitality clients — from boutique hotels to large resort chains requiring high-volume, consistent supply.</p>
+        </div>
+        <div class="mfg-capacity-row">
+          <div class="mfg-capacity-card reveal-up">
+            <div class="mfg-capacity-value">50,000+</div>
+            <div class="mfg-capacity-unit">Units / Day</div>
+            <p class="mfg-capacity-desc">Combined liquid, cream, and soap output from our automated production lines — scalable to meet large seasonal orders.</p>
+          </div>
+          <div class="mfg-capacity-card reveal-up">
+            <div class="mfg-capacity-value">12+</div>
+            <div class="mfg-capacity-unit">Product Categories</div>
+            <p class="mfg-capacity-desc">Soaps, shampoos, conditioners, body wash, lotions, dental kits, slippers, and more — all manufactured under one roof.</p>
+          </div>
+          <div class="mfg-capacity-card reveal-up">
+            <div class="mfg-capacity-value">500+</div>
+            <div class="mfg-capacity-unit">Hotels Supplied</div>
+            <p class="mfg-capacity-desc">Active supply relationships with hotels across India — from boutique properties to 5-star chains and resort groups.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section" aria-label="Certifications">
+      <div class="container">
+        <div class="sec-header centered reveal-up">
+          <span class="label-small">Standards &amp; Compliance</span>
+          <h2 class="sec-title">Built to International Standards</h2>
+          <p class="sec-desc">Every product we manufacture complies with Indian regulatory requirements and aligns with internationally recognized cosmetics and personal care industry standards.</p>
+        </div>
+        <div class="mfg-cert-grid">
+          <div class="mfg-cert-card reveal-up">
+            <span class="mfg-cert-icon">&#127885;</span>
+            <h3 class="mfg-cert-title">GMP Certified</h3>
+            <p class="mfg-cert-desc">Good Manufacturing Practice compliance ensures every batch is produced under controlled, hygienic, and documented conditions.</p>
+          </div>
+          <div class="mfg-cert-card reveal-up">
+            <span class="mfg-cert-icon">&#128737;&#65039;</span>
+            <h3 class="mfg-cert-title">BIS &amp; CDSCO Compliant</h3>
+            <p class="mfg-cert-desc">All cosmetics and personal care products comply with Indian Bureau of Standards and Central Drugs Standard Control regulations.</p>
+          </div>
+          <div class="mfg-cert-card reveal-up">
+            <span class="mfg-cert-icon">&#127807;</span>
+            <h3 class="mfg-cert-title">No Harmful Ingredients</h3>
+            <p class="mfg-cert-desc">Our formulations are free from restricted colorants, heavy metals, and SVHC substances referenced under EU Cosmetics Regulation standards.</p>
+          </div>
+          <div class="mfg-cert-card reveal-up">
+            <span class="mfg-cert-icon">&#9851;&#65039;</span>
+            <h3 class="mfg-cert-title">Sustainable Practices</h3>
+            <p class="mfg-cert-desc">We maintain responsible waste management, water-efficient manufacturing, and a growing portfolio of biodegradable packaging options.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-white" aria-label="Manufacturing CTA">
+      <div class="container">
+        <div class="mfg-cta-banner reveal-up">
+          <div class="mfg-cta-text">
+            <h2>Ready to Manufacture Your Brand?</h2>
+            <p>Whether you need white-label products or fully custom-branded amenities, our B2B manufacturing team is ready to build a supply solution tailored to your property.</p>
+          </div>
+          <div class="mfg-cta-actions">
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+            <a href="custom-branding.html" class="btn btn-secondary btn-light-outline">Custom Branding</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-editorial">
+      <div class="container">
+        <div class="footer-columns-grid">
+          <div class="footer-column-info">
+            <a href="index.html" class="footer-brand-logo"><img src="images/logo2.png" alt="ROVAR Logo" /></a>
+            <p class="footer-brand-desc">ROVAR creates thoughtfully designed hotel amenities and guest care solutions for modern hospitality businesses.</p>
+            <p class="footer-brand-desc" style="font-size: 12px; opacity: 0.6;">Serving the hospitality industry since 2006.</p>
+          </div>
+          <div>
+            <h3 class="footer-col-title">Quick Links</h3>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="custom-branding.html">Custom Branding</a></li>
+              <li><a href="manufacturing.html">Manufacturing</a></li>
+              <li><a href="sustainability.html">Sustainability</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-col-title">Products</h3>
+            <ul class="footer-links-list">
+              <li><a href="hotel-soaps.html">Hotel Soaps</a></li>
+              <li><a href="bath-body-care.html">Bath &amp; Body Care</a></li>
+              <li><a href="guest-room-essentials.html">Guest Essentials</a></li>
+              <li><a href="hotel-slippers.html">Hotel Slippers</a></li>
+            </ul>
+          </div>
+          <div class="footer-column-info">
+            <h3 class="footer-col-title">Contact Us</h3>
+            <div class="footer-links-list" style="gap: 12px; font-size: 14px;">
+              <p><strong>Phones:</strong><br /><a href="tel:+919106882700" style="display:inline;">+91 91068 82700</a>, <a href="tel:+919106172893" style="display:inline;">+91 91061 72893</a></p>
+              <p><strong>Email:</strong><br /><a href="mailto:rovar@libracosmetics.co.in">rovar@libracosmetics.co.in</a></p>
+              <p><strong>Address:</strong><br />814-815, I Square Corporate Park,<br />Near Shukan Mall, Sola Science City Road,<br />Ahmedabad - 380060, Gujarat, India</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-line">&copy; 2026 ROVAR. All rights reserved. | B2B Hospitality Amenities Manufacturer.</div>
+      </div>
+    </footer>
+
+
+    <div class="whatsapp-float-widget" aria-label="Quick WhatsApp chat">
+      <a href="https://wa.me/919106882700?text=Hello%20ROVAR,%20I%20am%20interested%20in%20your%20manufacturing%20capabilities." class="whatsapp-float-widget-btn" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="22" height="22" fill="currentColor" style="display: block;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+      </a>
+    </div>
+    <button class="back-to-top-btn" id="back-to-top" aria-label="Scroll Back to Top">&#8593;</button>
+    <script src="js/main.js"></script>
+  </body>
+</html>
