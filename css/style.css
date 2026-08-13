@@ -1852,10 +1852,16 @@ textarea.form-input-custom {
     display: block;
   }
   .global-header {
-    height: 76px;
+    height: 60px;
   }
   .header-scrolled .global-header {
-    height: 68px;
+    height: 54px;
+  }
+  .logo img {
+    height: 52px;
+  }
+  .header-scrolled .logo img {
+    height: 44px;
   }
   .hero-fullscreen-layout {
     min-height: 85vh;
@@ -1870,7 +1876,8 @@ textarea.form-input-custom {
     max-width: 100%;
   }
   .hero-image-block img {
-    height: 300px;
+    height: auto;
+    object-fit: contain;
   }
   .intro-grid {
     grid-template-columns: 1fr;
@@ -1880,7 +1887,12 @@ textarea.form-input-custom {
     grid-template-columns: 1fr;
   }
   .collection-card-img {
-    height: 280px;
+    height: auto;
+    overflow: visible;
+  }
+  .collection-card-img img {
+    height: auto;
+    object-fit: contain;
   }
   .why-rovar-grid {
     grid-template-columns: 1fr;
@@ -1904,7 +1916,8 @@ textarea.form-input-custom {
     order: 1;
   }
   .catalog-category-img img {
-    height: 300px;
+    height: auto;
+    object-fit: contain;
   }
   .slipper-grid-2x2 {
     grid-template-columns: 1fr;
@@ -1946,6 +1959,21 @@ textarea.form-input-custom {
   }
   .global-header {
     padding: 0 20px;
+  }
+  .hero-image-block img {
+    height: auto;
+    object-fit: contain;
+  }
+  .collection-card-img {
+    height: auto;
+  }
+  .collection-card-img img {
+    height: auto;
+    object-fit: contain;
+  }
+  .catalog-category-img img {
+    height: auto;
+    object-fit: contain;
   }
   .form-row-custom {
     grid-template-columns: 1fr;
