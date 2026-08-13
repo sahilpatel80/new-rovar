@@ -9,20 +9,34 @@
 /* --- Strict Color & Layout Variables --- */
 :root {
   /* Color Contract */
-  --bg-primary: #FAF9F6;         /* Warm Ivory Main Background */
-  --bg-secondary: #FFFFFF;       /* Pure White Background */
-  --primary: #8074BD;            /* Lavender (Primary Brand & Accent) */
-  --primary-dark: #6759A3;       /* Darker Lavender for Button Hovers */
-  --secondary: #8074BD;          /* Lavender Accent */
-  --secondary-light: #F1EFF8;    /* Lavender Soft (Card Backgrounds / Section Breaks) */
-  --olive: #625B3A;              /* Olive Detail (Subtle borders, highlights, thin lines) */
-  --taupe: #565450;              /* Muted Grey/Taupe for Secondary Text */
-  --text-dark: #1E1E1C;          /* Primary Headings / Text Dark */
-  --text-body: #565450;          /* Readable Body Text */
-  --border-soft: rgba(98, 91, 58, 0.15); /* Soft Olive-tinted Grey Border */
-  --accent-gold: #A78B58;        /* Optional Muted Gold Accent */
-  --footer-bg: #E2DFF0;          /* Medium-light Slate Lavender Footer Background */
-  --footer-text: #1E1E1C;        /* Dark Charcoal/Black Footer Text */
+  --bg-primary: #FAF9F6;
+  /* Warm Ivory Main Background */
+  --bg-secondary: #FFFFFF;
+  /* Pure White Background */
+  --primary: #8074BD;
+  /* Lavender (Primary Brand & Accent) */
+  --primary-dark: #6759A3;
+  /* Darker Lavender for Button Hovers */
+  --secondary: #8074BD;
+  /* Lavender Accent */
+  --secondary-light: #F1EFF8;
+  /* Lavender Soft (Card Backgrounds / Section Breaks) */
+  --olive: #625B3A;
+  /* Olive Detail (Subtle borders, highlights, thin lines) */
+  --taupe: #565450;
+  /* Muted Grey/Taupe for Secondary Text */
+  --text-dark: #1E1E1C;
+  /* Primary Headings / Text Dark */
+  --text-body: #565450;
+  /* Readable Body Text */
+  --border-soft: rgba(98, 91, 58, 0.15);
+  /* Soft Olive-tinted Grey Border */
+  --accent-gold: #A78B58;
+  /* Optional Muted Gold Accent */
+  --footer-bg: #E2DFF0;
+  /* Medium-light Slate Lavender Footer Background */
+  --footer-text: #1E1E1C;
+  /* Dark Charcoal/Black Footer Text */
 
   /* Spacing Grid (8px System) */
   --space-8: 8px;
@@ -33,7 +47,7 @@
   --space-48: 48px;
   --space-56: 56px;
   --space-64: 64px;
-  
+
   /* Section Padding */
   --space-section-lg: 120px;
   --space-section-md: 96px;
@@ -42,12 +56,13 @@
   /* Typography Scales (Using geometric Outfit globally for Antigravity theme) */
   --font-serif: 'Outfit', system-ui, -apple-system, sans-serif;
   --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
-  
+
   /* UI Tokens */
   --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-lg: 16px; /* Slightly more rounded for weightless concept */
-  
+  --radius-lg: 16px;
+  /* Slightly more rounded for weightless concept */
+
   /* Soft Ambient Floating Shadows */
   --shadow-sm: 0 4px 16px rgba(128, 116, 189, 0.04), 0 1px 4px rgba(0, 0, 0, 0.01);
   --shadow-md: 0 16px 36px rgba(128, 116, 189, 0.07), 0 4px 16px rgba(0, 0, 0, 0.02);
@@ -59,7 +74,9 @@
 }
 
 /* --- Base & Reset Styles --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -87,8 +104,15 @@ body {
 
 /* Page load fade-in */
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 body {
@@ -96,7 +120,12 @@ body {
 }
 
 /* --- Typography Scaling Contract --- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   color: var(--text-dark);
   font-weight: 400;
@@ -140,7 +169,11 @@ img {
 }
 
 /* Accessible focus outline */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--secondary);
   outline-offset: 3px;
 }
@@ -182,7 +215,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: var(--bg-secondary); /* Solid background to prevent hero image spillage */
+  background-color: var(--bg-secondary);
+  /* Solid background to prevent hero image spillage */
   border-bottom: 1px solid var(--border-soft);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
@@ -193,7 +227,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px 0 32px; /* logo slightly left, cta stays right */
+  padding: 0 40px 0 32px;
+  /* logo slightly left, cta stays right */
   gap: 16px;
   transition: var(--transition);
 }
@@ -208,26 +243,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .logo {
   flex-shrink: 0;
-  margin-right: 24px; /* space between logo and nav */
+  margin-right: 24px;
+  /* space between logo and nav */
 }
 
 .logo img {
-  height: 70px;
+  height: 40px;
   width: auto;
   transition: var(--transition-fast);
 }
 
 .header-scrolled .logo img {
-  height: 50px;
+  height: 34px;
 }
 
 /* Navigation Links */
 .desktop-nav {
   display: flex;
   align-items: center;
-  justify-content: center; /* center nav within its own space */
+  justify-content: center;
+  /* center nav within its own space */
   height: 100%;
-  flex: 1; /* take up all space between logo and button */
+  flex: 1;
+  /* take up all space between logo and button */
 }
 
 .nav-menu {
@@ -236,7 +274,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   gap: 24px;
   height: 100%;
   align-items: center;
-  justify-content: center; /* center the links within the nav */
+  justify-content: center;
+  /* center the links within the nav */
   flex-shrink: 1;
 }
 
@@ -250,7 +289,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav-link {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 14px; /* +2 from 12px */
+  font-size: 14px;
+  /* +2 from 12px */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-dark);
@@ -365,8 +405,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* Header Call to Action Button */
 .header-cta {
-  flex-shrink: 0; /* never shrink — always visible on the right */
-  margin-left: auto; /* push to far right */
+  flex-shrink: 0;
+  /* never shrink — always visible on the right */
+  margin-left: auto;
+  /* push to far right */
 }
 
 .header-cta .btn {
@@ -374,7 +416,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   padding: 10px 18px;
   letter-spacing: 0.09em;
   white-space: nowrap;
-  border-radius: 30px; /* pill shape */
+  border-radius: 30px;
+  /* pill shape */
 }
 
 /* 3. Button System */
@@ -587,7 +630,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   max-width: 320px;
   height: 100vh;
   background-color: var(--bg-secondary);
-  box-shadow: -8px 0 28px rgba(0,0,0,0.03);
+  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.03);
   z-index: 1050;
   padding: 90px 32px 40px;
   display: flex;
@@ -604,7 +647,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .mobile-drawer-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(30,30,28,0.3);
+  background-color: rgba(30, 30, 28, 0.3);
   backdrop-filter: blur(4px);
   z-index: 1040;
   opacity: 0;
@@ -696,7 +739,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: #1E1E1C; /* Dark base during load */
+  background-color: #1E1E1C;
+  /* Dark base during load */
   padding-top: 100px;
   padding-bottom: 60px;
 }
@@ -783,15 +827,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* Weightless Floating Animation */
 @keyframes floatMotion {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Ken Burns Entry Animation */
 @keyframes kenBurns {
-  0% { transform: scale(1.08); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Editorial Heading Hero (About, Products, Categories) */
@@ -855,7 +912,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* 2. Brand Introduction section (two-column) */
 .intro-grid {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 2fr 3fr;
   gap: 64px;
   align-items: start;
 }
@@ -898,7 +955,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .collection-card-img {
   width: 100%;
-  height: 270px; /* Vertically compact height */
+  height: 270px;
+  /* Vertically compact height */
   overflow: hidden;
 }
 
@@ -914,7 +972,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .collection-card-info {
-  padding: 24px; /* Vertically compact padding */
+  padding: 24px;
+  /* Vertically compact padding */
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-soft);
 }
@@ -935,10 +994,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* Asymmetric Columns Spanning Rules */
 @media (min-width: 769px) {
-  .collection-card.col-60-left { grid-column: span 7; }
-  .collection-card.col-40-right { grid-column: span 5; }
-  .collection-card.col-40-left { grid-column: span 5; }
-  .collection-card.col-60-right { grid-column: span 7; }
+  .collection-card.col-60-left {
+    grid-column: span 7;
+  }
+
+  .collection-card.col-40-right {
+    grid-column: span 5;
+  }
+
+  .collection-card.col-40-left {
+    grid-column: span 5;
+  }
+
+  .collection-card.col-60-right {
+    grid-column: span 7;
+  }
 }
 
 /* Product Cards Grid & Styling */
@@ -1026,8 +1096,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: var(--bg-primary);
 }
 
-.why-rovar-sec h2, 
-.why-rovar-sec h3, 
+.why-rovar-sec h2,
+.why-rovar-sec h3,
 .why-rovar-sec .sec-title {
   color: #FFFFFF;
 }
@@ -1431,7 +1501,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .form-input-custom {
-  height: 54px; /* Strictly between 52px and 58px */
+  height: 54px;
+  /* Strictly between 52px and 58px */
   border: 1px solid var(--border-soft);
   background-color: var(--bg-primary);
   padding: 0 16px;
@@ -1742,10 +1813,12 @@ textarea.form-input-custom {
     transition-duration: 0s !important;
     scroll-behavior: auto !important;
   }
+
   .reveal-up {
     opacity: 1 !important;
     transform: none !important;
   }
+
   body {
     animation: none !important;
   }
@@ -1757,6 +1830,7 @@ textarea.form-input-custom {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
+
   .contact-grid {
     gap: 40px;
   }
@@ -1766,13 +1840,16 @@ textarea.form-input-custom {
   .nav-menu {
     gap: 18px;
   }
+
   .nav-link {
     font-size: 13px;
     letter-spacing: 0.06em;
   }
+
   .logo {
     margin-right: 16px;
   }
+
   .header-cta .btn {
     font-size: 11px;
     padding: 9px 15px;
@@ -1783,37 +1860,47 @@ textarea.form-input-custom {
   .container {
     padding: 0 32px;
   }
+
   .global-header {
     padding: 0 20px 0 16px;
     gap: 12px;
   }
+
   .logo {
     margin-right: 12px;
   }
+
   .logo img {
     height: 44px;
   }
+
   .nav-menu {
     gap: 12px;
   }
+
   .nav-link {
     font-size: 11px;
     letter-spacing: 0.05em;
   }
+
   .header-cta .btn {
     font-size: 10px;
     padding: 8px 13px;
     letter-spacing: 0.06em;
   }
+
   .intro-grid {
     gap: 40px;
   }
+
   .product-story-grid {
     gap: 40px;
   }
+
   .slipper-grid-2x2 {
     gap: 24px;
   }
+
   .catalog-category-grid {
     gap: 40px;
   }
@@ -1824,19 +1911,24 @@ textarea.form-input-custom {
     padding: 0 14px 0 12px;
     gap: 8px;
   }
+
   .logo {
     margin-right: 8px;
   }
+
   .logo img {
     height: 40px;
   }
+
   .nav-menu {
     gap: 8px;
   }
+
   .nav-link {
     font-size: 10px;
     letter-spacing: 0.03em;
   }
+
   .header-cta .btn {
     font-size: 9px;
     padding: 7px 11px;
@@ -1845,87 +1937,112 @@ textarea.form-input-custom {
 }
 
 @media (max-width: 768px) {
-  .desktop-nav, .header-cta {
+
+  .desktop-nav,
+  .header-cta {
     display: none;
   }
+
   .hamburger {
     display: block;
   }
+
   .global-header {
     height: 60px;
   }
+
   .header-scrolled .global-header {
     height: 54px;
   }
+
   .logo img {
-    height: 52px;
+    height: 34px;
   }
+
   .header-scrolled .logo img {
-    height: 44px;
+    height: 28px;
   }
+
   .hero-fullscreen-layout {
     min-height: 85vh;
     padding-top: 130px;
     padding-bottom: 48px;
   }
+
   .hero-editorial-layout {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
   .hero-editorial-right p {
     max-width: 100%;
   }
+
   .hero-image-block img {
     height: auto;
     object-fit: contain;
   }
+
   .intro-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
   .collections-asymmetric-grid {
     grid-template-columns: 1fr;
   }
+
   .collection-card-img {
     height: auto;
     overflow: visible;
   }
+
   .collection-card-img img {
     height: auto;
     object-fit: contain;
   }
+
   .why-rovar-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
   .product-story-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
   .product-story-img img {
     height: 320px;
   }
+
   .catalog-category-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
   .catalog-category-grid.reversed .catalog-category-text {
     order: 2;
   }
+
   .catalog-category-grid.reversed .catalog-category-img {
     order: 1;
   }
+
   .catalog-category-img img {
     height: auto;
     object-fit: contain;
   }
+
   .slipper-grid-2x2 {
     grid-template-columns: 1fr;
   }
+
   .process-line-container {
     flex-direction: column;
     gap: 24px;
   }
+
   .process-line-container::before {
     top: 0;
     bottom: 0;
@@ -1933,19 +2050,23 @@ textarea.form-input-custom {
     width: 1px;
     height: auto;
   }
+
   .process-step-node {
     width: 100%;
     flex-direction: row;
     text-align: left;
     gap: 20px;
   }
+
   .process-node-circle {
     margin-bottom: 0;
   }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .footer-top-callout {
     flex-direction: column;
     align-items: flex-start;
@@ -1957,39 +2078,49 @@ textarea.form-input-custom {
   .container {
     padding: 0 20px;
   }
+
   .global-header {
     padding: 0 20px;
   }
+
   .hero-image-block img {
     height: auto;
     object-fit: contain;
   }
+
   .collection-card-img {
     height: auto;
   }
+
   .collection-card-img img {
     height: auto;
     object-fit: contain;
   }
+
   .catalog-category-img img {
     height: auto;
     object-fit: contain;
   }
+
   .form-row-custom {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
   .catalog-bullet-list {
     grid-template-columns: 1fr;
   }
+
   .btn-group {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
   }
+
   .btn-group .btn {
     width: 100%;
   }
+
   .hero-trust-row {
     flex-direction: column;
     gap: 12px;
@@ -2039,6 +2170,7 @@ textarea.form-input-custom {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
   .eco-focus-card {
     padding: 32px;
   }
@@ -2226,10 +2358,12 @@ textarea.form-input-custom {
   z-index: 2;
   pointer-events: none;
 }
+
 .partners-marquee-track-wrapper::before {
   left: 0;
   background: linear-gradient(to right, var(--bg-secondary), transparent);
 }
+
 .partners-marquee-track-wrapper::after {
   right: 0;
   background: linear-gradient(to left, var(--bg-secondary), transparent);
@@ -2245,12 +2379,18 @@ textarea.form-input-custom {
 }
 
 .partners-marquee-track:hover {
-  animation-play-state: paused; /* Pause on hover */
+  animation-play-state: paused;
+  /* Pause on hover */
 }
 
 @keyframes marqueeScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Individual logo items */
@@ -2263,15 +2403,15 @@ textarea.form-input-custom {
 }
 
 .partner-logo-item img {
-  height: 72px;           /* Bigger — was 60px */
-  max-width: 220px;
+  height: 100px;
+  max-width: 260px;
   width: auto;
   object-fit: contain;
-  opacity: 1;
+  opacity: 0.85;
   transition: var(--transition-fast);
 }
 
 .partner-logo-item:hover img {
-  opacity: 0.8;
+  opacity: 1;
   transform: scale(1.06);
 }
