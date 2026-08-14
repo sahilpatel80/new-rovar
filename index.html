@@ -165,7 +165,26 @@
     <!-- SECTION 1: FULLSCREEN IMAGE BACKGROUND HERO -->
     <section class="hero-fullscreen-layout" aria-label="ROVAR Introduction">
       <div class="hero-bg-wrapper">
-        <div class="hero-bg-image"></div>
+        <!-- Slide 1: Hotel Lobby -->
+        <div class="hero-slide active" data-index="0" id="slide-0" role="tabpanel" aria-label="Luxury hotel lobby">
+          <img src="images/hero-1.png" alt="Luxury hotel lobby" class="hero-slide-img" />
+          <div class="hero-overlay"></div>
+        </div>
+        <!-- Slide 2: Woman experiencing body care -->
+        <div class="hero-slide" data-index="1" id="slide-1" role="tabpanel" aria-label="Woman experiencing ROVAR hotel body-care amenities" aria-hidden="true">
+          <img src="images/hero-2.png" alt="Woman experiencing ROVAR hotel body-care amenities" class="hero-slide-img" loading="lazy" />
+          <div class="hero-overlay"></div>
+        </div>
+        <!-- Slide 3: ROVAR Products -->
+        <div class="hero-slide" data-index="2" id="slide-2" role="tabpanel" aria-label="ROVAR hotel amenities and product collection" aria-hidden="true">
+          <img src="images/product2.png" alt="ROVAR hotel amenities and product collection" class="hero-slide-img" loading="lazy" />
+          <div class="hero-overlay"></div>
+        </div>
+        <!-- Slide 4: Sustainability -->
+        <div class="hero-slide" data-index="3" id="slide-3" role="tabpanel" aria-label="Sustainable and eco-friendly hotel amenities" aria-hidden="true">
+          <img src="images/sustainability1.png" alt="Sustainable and eco-friendly hotel amenities" class="hero-slide-img" loading="lazy" />
+          <div class="hero-overlay"></div>
+        </div>
       </div>
       <div class="container">
         <div class="hero-fullscreen-content reveal-up">
@@ -181,6 +200,26 @@
             <span class="hero-trust-tag">Custom Branding</span>
             <span class="hero-trust-tag">Bulk Supply</span>
           </div>
+        </div>
+      </div>
+      <!-- Slider Controls -->
+      <div class="hero-controls-container">
+        <div class="container hero-controls-row">
+          <!-- Prev Arrow -->
+          <button class="hero-arrow prev-slide" aria-label="Previous slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </button>
+          
+          <!-- Next Arrow -->
+          <button class="hero-arrow next-slide" aria-label="Next slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
