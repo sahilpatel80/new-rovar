@@ -8,14 +8,161 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Sticky Header scroll behavior
   const body = document.body;
   const scrollThreshold = 30;
+  const hasDarkHero = document.querySelector(".hero-fullscreen-layout") !== null || document.querySelector(".mfg-hero-bg") !== null;
 
-  window.addEventListener("scroll", () => {
+  const handleHeaderScroll = () => {
     if (window.scrollY > scrollThreshold) {
       body.classList.add("header-scrolled");
+      if (hasDarkHero) {
+        body.classList.remove("header-on-dark");
+      }
     } else {
       body.classList.remove("header-scrolled");
+      if (hasDarkHero) {
+        body.classList.add("header-on-dark");
+      }
     }
-  });
+  };
+
+  // Run on load to set initial state
+  handleHeaderScroll();
+
+  // Run on scroll
+  window.addEventListener("scroll", handleHeaderScroll);
+  
+  // --- Homepage Hero Slider ---
+  const heroSection = document.querySelector(".hero-fullscreen-layout");
+  if (heroSection) {
+    const slides = heroSection.querySelectorAll(".hero-slide");
+    const indicators = heroSection.querySelectorAll(".hero-indicator");
+    const prevBtn = heroSection.querySelector(".prev-slide");
+    const nextBtn = heroSection.querySelector(".next-slide");
+    
+    let currentIndex = 0;
+    let autoplayTimer = null;
+    const slideDuration = 4000; // 4s autoplay delay
+
+    const showSlide = (index) => {
+      if (index === currentIndex) return;
+      
+      currentIndex = (index + slides.length) % slides.length;
+      
+      // Update slides active state
+      slides.forEach((slide, i) => {
+        if (i === currentIndex) {
+          slide.classList.add("active");
+          slide.removeAttribute("aria-hidden");
+        } else {
+          slide.classList.remove("active");
+          slide.setAttribute("aria-hidden", "true");
+        }
+      });
+      
+      // Update indicators active state
+      indicators.forEach((indicator, i) => {
+        if (i === currentIndex) {
+          indicator.classList.add("active");
+          indicator.setAttribute("aria-selected", "true");
+        } else {
+          indicator.classList.remove("active");
+          indicator.setAttribute("aria-selected", "false");
+        }
+      });
+    };
+
+    const nextSlide = () => {
+      showSlide(currentIndex + 1);
+    };
+
+    const prevSlide = () => {
+      showSlide(currentIndex - 1);
+    };
+
+    const startAutoplay = () => {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(nextSlide, slideDuration);
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    };
+
+    // Auto Play Event Listeners
+    startAutoplay();
+
+    // Pause autoplay on mouse hover on desktop
+    heroSection.addEventListener("mouseenter", stopAutoplay);
+    heroSection.addEventListener("mouseleave", startAutoplay);
+
+    // Navigation triggers
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        prevSlide();
+        startAutoplay(); // Reset autoplay timer on click
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        nextSlide();
+        startAutoplay(); // Reset autoplay timer on click
+      });
+    }
+
+    indicators.forEach((indicator) => {
+      indicator.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetIndex = parseInt(indicator.getAttribute("data-slide-to"), 10);
+        showSlide(targetIndex);
+        startAutoplay(); // Reset autoplay timer on click
+      });
+    });
+
+    // Keyboard navigation
+    heroSection.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        prevSlide();
+        startAutoplay();
+      } else if (e.key === "ArrowRight") {
+        nextSlide();
+        startAutoplay();
+      }
+    });
+
+    // Touch Support for mobile (swipe)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    heroSection.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroSection.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    const handleSwipe = () => {
+      const swipeThreshold = 50; // min swipe distance in px
+      const deltaX = touchEndX - touchStartX;
+      
+      if (Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX > 0) {
+          // Swipe Right -> Previous slide
+          prevSlide();
+        } else {
+          // Swipe Left -> Next slide
+          nextSlide();
+        }
+        startAutoplay(); // Reset autoplay timer
+      }
+    };
+  }
 
   // 2. Mobile Drawer Navigation
   const hamburger = document.getElementById("hamburger");
