@@ -818,11 +818,11 @@ textarea:focus-visible {
 
 /* Custom Responsive Image Positioning */
 .hero-slide[data-index="1"] .hero-slide-img {
-  object-position: center;
+  object-position: center 65%;
 }
 @media (max-width: 768px) {
   .hero-slide[data-index="1"] .hero-slide-img {
-    object-position: 60% center;
+    object-position: 65% 65%;
   }
 }
 
@@ -855,10 +855,10 @@ textarea:focus-visible {
 
 @keyframes kenBurnsZoomOut {
   0% {
-    transform: scale(1.15);
+    transform: scale(1.06);
   }
   100% {
-    transform: scale(1.03);
+    transform: scale(1.00);
   }
 }
 
