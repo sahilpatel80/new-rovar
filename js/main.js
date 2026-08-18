@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let currentIndex = 0;
     let autoplayTimer = null;
-    const slideDuration = 4000; // 4s autoplay delay
+    const slideDuration = 3000; // 3s autoplay delay as requested
 
     const showSlide = (index) => {
       if (index === currentIndex) return;
@@ -93,9 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Auto Play Event Listeners
     startAutoplay();
 
-    // Pause autoplay on mouse hover on desktop
-    heroSection.addEventListener("mouseenter", stopAutoplay);
-    heroSection.addEventListener("mouseleave", startAutoplay);
+    // Autoplay runs continuously (does not pause on mouse hover) as requested
 
     // Navigation triggers
     if (prevBtn) {
